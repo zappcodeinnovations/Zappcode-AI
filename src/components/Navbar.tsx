@@ -35,7 +35,7 @@ const navLinks = [
 
 export default function Navbar() {
     const [mobileOpen, setMobileOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
+   const [, setScrolled] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
 

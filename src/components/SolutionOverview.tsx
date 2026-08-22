@@ -275,7 +275,13 @@ function OrbitDiagram({ inView }: { inView: boolean }) {
     );
 }
 
-function ValueCard({ point, index, inView }: { point: typeof valuePoints[number], index: number, inView: boolean }) {
+function ValueCard({
+    point,
+    index
+}: {
+    point: typeof valuePoints[number];
+    index: number;
+}) {
     const Icon = point.icon;
     const lines = point.title.split('\n');
 
@@ -419,7 +425,7 @@ export default function SolutionOverview() {
                     className="grid md:grid-cols-3 gap-6"
                 >
                     {valuePoints.map((point, index) => (
-                        <ValueCard key={index} point={point} index={index} inView={inView} />
+                       <ValueCard key={index} point={point} index={index} />
                     ))}
                 </motion.div>
 

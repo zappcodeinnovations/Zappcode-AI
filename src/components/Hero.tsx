@@ -1,9 +1,13 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ChevronDown, Calendar, PlayCircle } from 'lucide-react';
+import { ChevronDown, Calendar, PlayCircle } from 'lucide-react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import Navbar from './Navbar';
 import heroVideo from '../assets/hero-section.mp4';
+
+
+const easeOut = [0.23, 1, 0.32, 1] as const;
+
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -12,7 +16,7 @@ const containerVariants = {
 
 const wordVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.23, 1, 0.32, 1] } }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: easeOut } }
 };
 
 export default function Hero() {
@@ -87,7 +91,7 @@ export default function Hero() {
           <motion.div 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
+            transition={{ duration: 0.6, ease: easeOut }}
             className="mb-8 px-4 py-2 rounded-full flex items-center gap-2"
             style={{ border: '1px solid var(--color-orange)', background: 'rgba(15, 23, 42, 0.4)', backdropFilter: 'blur(10px)' }}
           >
@@ -128,7 +132,7 @@ export default function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6, ease: [0.23, 1, 0.32, 1] }}
+            transition={{ duration: 0.6, delay: 0.6, ease: easeOut }}
             className="mb-10 max-w-3xl"
             style={{
               fontSize: 'clamp(16px, 2vw, 20px)',
@@ -143,7 +147,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.8, ease: [0.23, 1, 0.32, 1] }}
+            transition={{ duration: 0.5, delay: 0.8, ease: easeOut }}
             className="flex flex-col sm:flex-row gap-5 items-center justify-center w-full"
           >
             <Link to="/book-demo" className="w-full sm:w-auto px-6 py-3 rounded-xl font-semibold transition-all hover:-translate-y-1 flex items-center justify-center gap-2 text-sm sm:text-base bg-gradient-brand" 

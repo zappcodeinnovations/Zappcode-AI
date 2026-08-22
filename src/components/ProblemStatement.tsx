@@ -34,9 +34,18 @@ const containerVariants = {
     visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
 };
 
+const easeOut = [0.23, 1, 0.32, 1] as const;
+
 const cardVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.23, 1, 0.32, 1] } }
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.5,
+            ease: easeOut
+        }
+    }
 };
 
 export default function ProblemStatement() {

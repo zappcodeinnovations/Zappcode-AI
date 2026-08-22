@@ -470,8 +470,8 @@ function PulseDot() {
 ───────────────────────────────────────────── */
 export default function AgentScrollSection() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [prevIndex, setPrevIndex] = useState(0);
-  const [transitioning, setTransitioning] = useState(false);
+  // const [prevIndex, setPrevIndex] = useState(0);
+  const [, setTransitioning] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [sectionTop, setSectionTop] = useState(0);
@@ -497,12 +497,11 @@ export default function AgentScrollSection() {
     const stepH = window.innerHeight;
     const raw = Math.floor(scrolled / stepH);
     const next = Math.max(0, Math.min(8, raw));
-    if (next !== activeIndex) {
-      setPrevIndex(activeIndex);
-      setTransitioning(true);
-      setTimeout(() => setTransitioning(false), 620);
-      setActiveIndex(next);
-    }
+   if (next !== activeIndex) {
+  setTransitioning(true);
+  setTimeout(() => setTransitioning(false), 620);
+  setActiveIndex(next);
+}
   }, [activeIndex, isMobile]);
 
   useEffect(() => {
@@ -519,7 +518,7 @@ export default function AgentScrollSection() {
 
   const agent = agents[activeIndex];
   const Visual = visuals[activeIndex];
-  const PrevVisual = visuals[prevIndex];
+  // const PrevVisual = visuals[prevIndex];
   const progress = (activeIndex + 1) / 9;
 
   return (

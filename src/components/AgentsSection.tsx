@@ -8,6 +8,8 @@ import {
 } from 'lucide-react';
 import aiAgentVideo from '../assets/ai-agent.mp4';
 
+const easeOut = [0.23, 1, 0.32, 1] as const;
+
 const agents = [
   {
     name: 'Forecast Agent',
@@ -77,7 +79,7 @@ export default function AgentsSection() {
 
     const itemVariants = {
         hidden: { opacity: 0, y: 30 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.23, 1, 0.32, 1] } }
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: easeOut } }
     };
 
     return (

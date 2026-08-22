@@ -1,11 +1,11 @@
 import { useRef, useState, useEffect } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Plug, Settings, RefreshCcw } from 'lucide-react';
 import robotImg from '../assets/robot.png';
 
 const steps = [
-    { 
-        title: "Adopt", 
+    {
+        title: "Adopt",
         desc: "We connect Zappcode's AI agents to your current systems — no need to replace anything you already use.",
         icon: Plug,
         color: "text-blue-500",
@@ -13,8 +13,8 @@ const steps = [
         borderColor: "border-blue-100",
         shadow: "shadow-[0_0_30px_rgba(59,130,246,0.3)]"
     },
-    { 
-        title: "Automate", 
+    {
+        title: "Automate",
         desc: "The AI agents start handling forecasting, pricing, and planning decisions — working around the clock without needing manual input.",
         icon: Settings,
         color: "text-orange-500",
@@ -22,8 +22,8 @@ const steps = [
         borderColor: "border-orange-100",
         shadow: "shadow-[0_0_30px_rgba(249,115,22,0.3)]"
     },
-    { 
-        title: "Evolve", 
+    {
+        title: "Evolve",
         desc: "The system keeps learning and improving every day, so it gets smarter and more accurate over time.",
         icon: RefreshCcw,
         color: "text-purple-500",
@@ -35,7 +35,7 @@ const steps = [
 
 export default function HowItWorksLight() {
     const sectionRef = useRef<HTMLElement>(null);
-    const [isMobile, setIsMobile] = useState(false);
+    const [, setIsMobile] = useState(false);
 
     useEffect(() => {
         const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -44,25 +44,16 @@ export default function HowItWorksLight() {
         return () => window.removeEventListener('resize', checkMobile);
     }, []);
 
-    // Scroll tracking for drawing the line
-    const { scrollYProgress } = useScroll({
-        target: sectionRef,
-        offset: ['start 60%', 'end 80%']
-    });
+    // const { scrollYProgress } = useScroll({
+    //     target: sectionRef,
+    //     offset: ['start 60%', 'end 80%']
+    // });
 
-    const smoothProgress = useSpring(scrollYProgress, {
-        stiffness: 100,
-        damping: 20,
-        restDelta: 0.001
-    });
-
-    // Step activation states based on scroll progress
-    const step1Active = useTransform(smoothProgress, [0.1, 0.2], [0, 1]);
-    const step2Active = useTransform(smoothProgress, [0.45, 0.55], [0, 1]);
-    const step3Active = useTransform(smoothProgress, [0.8, 0.9], [0, 1]);
-
-    const activeStates = [step1Active, step2Active, step3Active];
-    const colors = ['var(--color-blue)', 'var(--color-orange)', 'var(--color-cyan)'];
+    // const smoothProgress = useSpring(scrollYProgress, {
+    //     stiffness: 100,
+    //     damping: 20,
+    //     restDelta: 0.001
+    // });
 
     return (
         <section ref={sectionRef} id="how-it-works-light" className="relative overflow-hidden" style={{ background: '#F8FAFC', padding: 'clamp(40px, 5vw, 60px) 0' }}>

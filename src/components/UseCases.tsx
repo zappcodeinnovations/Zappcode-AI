@@ -3,9 +3,23 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-    Factory, Store, Pill, ShoppingCart, Globe, Check,
-    TrendingUp, RefreshCw, ShieldCheck, LineChart, Recycle,
-    Timer, Radar, Truck, Boxes, AlertTriangle, Package, Gauge, Layers
+    Factory,
+    Store,
+    Pill,
+    ShoppingCart,
+    Globe,
+    TrendingUp,
+    ShieldCheck,
+    LineChart,
+    Recycle,
+    Timer,
+    Radar,
+    Truck,
+    Boxes,
+    AlertTriangle,
+    Package,
+    Gauge,
+    Layers
 } from 'lucide-react';
 
 import manufacturingImg from '../assets/sections/manufacturing.png';
