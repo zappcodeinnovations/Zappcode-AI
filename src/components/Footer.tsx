@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { LayoutGrid, Building2, BookOpen, Send, ShieldCheck, Lock, Euro, Globe, ChevronRight } from 'lucide-react';
+import footerLogo from '../assets/footer-logo.png';
 
 const socialIcons = [
   {
@@ -71,11 +72,13 @@ export default function Footer() {
 
           {/* Brand Section (Left) */}
           <div className="flex flex-col pr-4">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-gradient-brand flex items-center justify-center font-bold text-white text-2xl shadow-lg">
-                Z
-              </div>
-              <span className="font-bold text-slate-900 text-[26px] tracking-tight">Zappcode AI</span>
+            <div className="flex items-center mb-6 md:mb-8">
+              <img 
+                src={footerLogo} 
+                alt="Zappcode AI" 
+                className="h-20 md:h-28 w-auto object-contain"
+                style={{ transform: 'scale(1.4)', transformOrigin: 'left center' }}
+              />
             </div>
             <h3 className="text-xl md:text-[22px] font-bold text-slate-900 mb-4 font-sans leading-snug">
               Demand intelligence,<br />driven by <span className="text-blue-600">AI.</span>

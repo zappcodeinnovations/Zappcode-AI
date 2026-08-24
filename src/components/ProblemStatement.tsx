@@ -166,7 +166,7 @@ function StatCard({ stat, index, inView }: { stat: (typeof stats)[number]; index
                 border: `1px solid ${accentColor}1A`,
                 boxShadow: `0 4px 20px ${accentColor}0D`,
                 borderRadius: '16px',
-                padding: '32px 40px'
+                padding: 'clamp(20px, 4vw, 32px) clamp(20px, 5vw, 40px)'
             }}
         >
             <div>

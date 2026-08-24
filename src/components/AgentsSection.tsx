@@ -270,7 +270,7 @@ function HighlightedCard({ agent, num }: { agent: any, num: string }) {
                 </motion.div>
 
                 <motion.h3 
-                    className="text-2xl font-bold mb-1"
+                    className="text-2xl font-bold mb-1 pr-24"
                     animate={{ y: isHovered ? -2 : 0 }}
                     transition={{ duration: 0.3 }}
                 >
@@ -278,7 +278,7 @@ function HighlightedCard({ agent, num }: { agent: any, num: string }) {
                 </motion.h3>
                 
                 <motion.p 
-                    className="text-white/80 font-mono text-sm mb-4"
+                    className="text-white/80 font-mono text-sm mb-4 pr-20"
                     animate={{ y: isHovered ? -2 : 0 }}
                     transition={{ duration: 0.3, delay: 0.05 }}
                 >
@@ -355,7 +355,7 @@ function DarkCard({ agent, num, index }: { agent: any, num: string, index: numbe
                 </motion.div>
 
                 <motion.h3 
-                    className="text-2xl font-bold mb-1 text-white"
+                    className="text-2xl font-bold mb-1 text-white pr-24"
                     animate={{ y: isHovered ? -2 : 0 }}
                     transition={{ duration: 0.3 }}
                 >
@@ -363,7 +363,7 @@ function DarkCard({ agent, num, index }: { agent: any, num: string, index: numbe
                 </motion.h3>
                 
                 <motion.p 
-                    className="text-[#64748B] font-mono text-sm mb-4"
+                    className="text-[#64748B] font-mono text-sm mb-4 pr-20"
                     animate={{ y: isHovered ? -2 : 0 }}
                     transition={{ duration: 0.3, delay: 0.05 }}
                 >

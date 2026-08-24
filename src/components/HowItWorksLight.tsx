@@ -189,7 +189,7 @@ export default function HowItWorksLight() {
                                 <motion.img 
                                     src={robotImg} 
                                     alt="Getting Started Steps" 
-                                    className="relative z-10 w-full max-h-[65vh] h-auto drop-shadow-2xl object-contain mx-auto"
+                                    className="relative z-10 w-full max-h-[40vh] md:max-h-[65vh] h-auto drop-shadow-2xl object-contain mx-auto"
                                     whileHover={{ 
                                         scale: 1.02,
                                         rotateX: 2,

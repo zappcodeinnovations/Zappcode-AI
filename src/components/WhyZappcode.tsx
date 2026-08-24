@@ -199,19 +199,24 @@ export default function WhyZappcode() {
                     className="bg-white/80 backdrop-blur-xl rounded-[32px] p-6 md:p-10 mb-12 md:mb-16 border border-white shadow-[0_20px_50px_rgba(0,0,0,0.03)]"
                 >
                     {/* Headers */}
-                    <div className="flex justify-between items-center mb-10 px-2 md:px-10">
-                        <div className="bg-slate-500 text-white text-[11px] md:text-[13px] font-bold tracking-widest uppercase px-6 md:px-8 py-3 rounded-full">
+                    <div className="flex justify-between items-center mb-8 md:mb-10 px-0 md:px-10 gap-2">
+                        <div className="bg-slate-500 text-white text-[9px] sm:text-[11px] md:text-[13px] font-bold tracking-widest uppercase px-3 sm:px-6 md:px-8 py-2 md:py-3 rounded-full text-center flex-1 md:flex-none">
                             Traditional Tools
                         </div>
-                        <div className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white text-[11px] md:text-[13px] font-bold tracking-widest uppercase px-6 md:px-8 py-3 rounded-full flex items-center gap-2 shadow-lg shadow-purple-500/20">
-                            <Sparkles size={16} /> ZAPPCODE AI
+                        <div className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white text-[9px] sm:text-[11px] md:text-[13px] font-bold tracking-widest uppercase px-3 sm:px-6 md:px-8 py-2 md:py-3 rounded-full flex items-center justify-center gap-1.5 shadow-lg shadow-purple-500/20 flex-1 md:flex-none">
+                            <Sparkles className="w-3 h-3 md:w-4 md:h-4" /> ZAPPCODE AI
                         </div>
                     </div>
 
                     {/* Rows */}
-                    <div className="flex flex-col gap-6 md:gap-10">
+                    <div className="flex flex-col gap-8 md:gap-10">
                         {comparisonData.map((row, idx) => (
-                            <div key={idx} className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0 relative">
+                            <div key={idx} className="flex flex-col md:flex-row items-center justify-between gap-2 md:gap-0 relative">
+
+                                {/* Mobile Label (hidden on desktop) */}
+                                <div className="md:hidden w-full text-center mb-1 mt-2">
+                                    <span className="text-[11px] font-bold uppercase tracking-widest text-blue-500">{row.label}</span>
+                                </div>
 
                                 {/* Left Side (Old) */}
                                 <div className="w-full md:w-[35%] relative z-10">
@@ -222,7 +227,14 @@ export default function WhyZappcode() {
                                     <FunnelPath direction="left" colorId={`left-${idx}`} gradientClass={row.color} />
                                 </div>
 
-                                {/* Center Circle */}
+                                {/* Mobile Down Arrow (hidden on desktop) */}
+                                <div className="md:hidden flex justify-center my-1 z-30">
+                                    <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 shadow-sm">
+                                        <ChevronRight size={18} className="rotate-90" />
+                                    </div>
+                                </div>
+
+                                {/* Center Circle (hidden on mobile) */}
                                 <div className="hidden md:flex flex-col items-center justify-center w-[120px] relative z-30">
                                     <div className="w-14 h-14 bg-white rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-gray-50 flex items-center justify-center mb-2">
                                         <row.icon size={22} className="text-slate-800" strokeWidth={2.5} />
@@ -238,7 +250,7 @@ export default function WhyZappcode() {
                                         <span className={`pl-6 font-bold text-[14px] md:text-[16px] bg-clip-text text-transparent bg-gradient-to-r ${row.color}`}>
                                             {row.newText}
                                         </span>
-                                        <div className={`w-12 h-12 rounded-full flex items-center justify-center text-white bg-gradient-to-br ${row.color} shadow-inner`}>
+                                        <div className={`w-12 h-12 rounded-full flex items-center justify-center text-white bg-gradient-to-br ${row.color} shadow-inner shrink-0`}>
                                             <row.newIcon size={20} strokeWidth={2.5} />
                                         </div>
                                     </div>
