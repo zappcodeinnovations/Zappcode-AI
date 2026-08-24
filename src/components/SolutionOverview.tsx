@@ -104,7 +104,7 @@ function OrbitDiagram({ inView }: { inView: boolean }) {
     }, []);
 
     return (
-        <div ref={containerRef} className="relative w-full aspect-[6/5] max-w-[440px] mx-auto hidden md:block">
+        <div ref={containerRef} className="relative w-full aspect-[6/5] max-w-[440px] mx-auto">
 
             {/* Ground plane — decorative dashed rings under the cube */}
             <motion.div
@@ -356,7 +356,7 @@ export default function SolutionOverview() {
             <div className="relative z-10 max-w-[1280px] mx-auto px-6 md:px-12">
 
                 {/* Top: two-column — text left, orbit diagram right */}
-                <div className="grid lg:grid-cols-2 gap-14 lg:gap-10 items-center mb-10 md:mb-14">
+                <div className="grid lg:grid-cols-2 gap-10 lg:gap-10 items-center mb-10 md:mb-14">
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
