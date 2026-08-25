@@ -8,34 +8,35 @@ const navLinks = [
     { label: 'Home', path: '/', isRouter: true, icon: Home },
     { label: 'About', path: '/about', isRouter: true, icon: User },
     {
-        label: 'Solution', path: '/#solution', isRouter: false, icon: LayoutGrid, hasDropdown: true,
+        label: 'Solution', path: '#', isRouter: false, icon: LayoutGrid, hasDropdown: true,
         dropdownItems: [
-            { label: 'How it Works', path: '#' },
-            { label: 'Demand Forecasting', path: '#' },
-            { label: 'ERP Integration', path: '#' },
+            { label: 'How it Works', path: '/solution/how-it-works', isRouter: true },
+            { label: 'Demand Forecasting', path: '/solution/demand-forecasting', isRouter: true },
+            { label: 'ERP Integration', path: '/solution/erp-integration', isRouter: true },
         ]
     },
     { label: 'Agents', path: '/agents', isRouter: true, icon: Bot },
     {
         label: 'Industries', path: '/#use-cases', isRouter: false, icon: ShieldCheck, hasDropdown: true,
         dropdownItems: [
-            { label: 'Retail', path: '#' },
-            { label: 'Manufacturing', path: '#' },
-            { label: 'Logistics', path: '#' },
+            { label: 'Retail', path: '#', isRouter: false },
+            { label: 'Manufacturing', path: '#', isRouter: false },
+            { label: 'Logistics', path: '#', isRouter: false },
         ]
     },
     {
         label: 'Resources', path: '/contact', isRouter: true, icon: FileText, hasDropdown: true,
         dropdownItems: [
-            { label: 'Case Studies', path: '#' },
-            { label: 'Documentation', path: '#' },
-            { label: 'Webinars', path: '#' },
+            { label: 'Case Studies', path: '#', isRouter: false },
+            { label: 'Documentation', path: '#', isRouter: false },
+            { label: 'Webinars', path: '#', isRouter: false },
         ]
     },
 ];
 
 export default function Navbar() {
     const [mobileOpen, setMobileOpen] = useState(false);
+    const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
     const [, setScrolled] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
@@ -84,6 +85,7 @@ export default function Navbar() {
                     <div className="hidden lg:flex items-center gap-1 xl:gap-2">
                         {navLinks.map((link) => {
                             const Icon = link.icon;
+                            const isDropdownOpen = hoveredMenu === link.label;
                             const content = (
                                 <>
                                     <Icon size={16} className="text-slate-400 group-hover:text-blue-600 transition-colors" />
@@ -95,7 +97,7 @@ export default function Navbar() {
                             const className = "group flex items-center gap-2 px-3 xl:px-4 py-2 rounded-full text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-all duration-200 cursor-pointer";
 
                             return (
-                                <div key={link.label} className="relative group/dropdown">
+                                <div key={link.label} className="relative group/dropdown" onMouseEnter={() => setHoveredMenu(link.label)} onMouseLeave={() => setHoveredMenu(null)}>
                                     {link.isRouter ? (
                                         <Link to={link.path} className={className}>
                                             {content}
@@ -107,17 +109,41 @@ export default function Navbar() {
                                     )}
 
                                     {/* Dropdown Menu */}
-                                    {link.hasDropdown && link.dropdownItems && (
-                                        <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 translate-y-2 pointer-events-none group-hover/dropdown:opacity-100 group-hover/dropdown:translate-y-0 group-hover/dropdown:pointer-events-auto transition-all duration-200">
-                                            <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-2 min-w-[200px] flex flex-col">
-                                                {link.dropdownItems.map((item) => (
-                                                    <a key={item.label} href={item.path} className="px-4 py-2.5 rounded-xl text-[14px] font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50 transition-colors">
-                                                        {item.label}
-                                                    </a>
-                                                ))}
-                                            </div>
-                                        </div>
-                                    )}
+                                    <AnimatePresence>
+                                        {link.hasDropdown && link.dropdownItems && isDropdownOpen && (
+                                            <motion.div 
+                                                initial={{ opacity: 0, y: -10 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                exit={{ opacity: 0, y: -10 }}
+                                                transition={{ duration: 0.2 }}
+                                                className="absolute top-full left-1/2 -translate-x-1/2 pt-3"
+                                            >
+                                                <div className="bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-gray-100 p-2 min-w-[220px] flex flex-col relative overflow-hidden">
+                                                    {link.dropdownItems.map((item) => {
+                                                        const DropdownItemContent = (
+                                                            <div className="relative z-10 flex items-center justify-between w-full pl-2">
+                                                                <span>{item.label}</span>
+                                                            </div>
+                                                        );
+
+                                                        const itemClass = "group/item relative px-4 py-2.5 rounded-xl text-[14px] font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50/80 transition-all duration-300 hover:translate-x-1 overflow-hidden";
+
+                                                        return item.isRouter ? (
+                                                            <Link key={item.label} to={item.path} className={itemClass} onClick={() => setHoveredMenu(null)}>
+                                                                <span className="absolute bottom-3 left-4 w-0 h-[2px] bg-blue-600 transition-all duration-300 group-hover/item:w-3" />
+                                                                {DropdownItemContent}
+                                                            </Link>
+                                                        ) : (
+                                                            <a key={item.label} href={item.path} className={itemClass}>
+                                                                <span className="absolute bottom-3 left-4 w-0 h-[2px] bg-blue-600 transition-all duration-300 group-hover/item:w-3" />
+                                                                {DropdownItemContent}
+                                                            </a>
+                                                        );
+                                                    })}
+                                                </div>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
                                 </div>
                             );
                         })}
@@ -180,7 +206,7 @@ export default function Navbar() {
                                             initial={{ opacity: 0, x: 20 }}
                                             animate={{ opacity: 1, x: 0 }}
                                             transition={{ delay: 0.1 + (i * 0.05) }}
-                                            className="flex items-center gap-4 text-lg font-bold text-slate-800 py-3.5 border-b border-gray-50"
+                                            className="flex items-center gap-4 text-lg font-bold text-slate-800 py-3.5"
                                         >
                                             <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center">
                                                 <Icon size={18} className="text-blue-600" />
@@ -189,18 +215,35 @@ export default function Navbar() {
                                         </motion.div>
                                     );
 
-                                    if (link.isRouter) {
-                                        return (
-                                            <Link key={link.label} to={link.path} onClick={() => setMobileOpen(false)}>
-                                                {content}
-                                            </Link>
-                                        );
-                                    }
-
-                                    return (
+                                    const mainLink = link.isRouter ? (
+                                        <Link key={link.label} to={link.path} onClick={() => setMobileOpen(false)}>
+                                            {content}
+                                        </Link>
+                                    ) : (
                                         <a key={link.label} href={link.path} onClick={() => setMobileOpen(false)}>
                                             {content}
                                         </a>
+                                    );
+
+                                    return (
+                                        <div key={link.label} className="flex flex-col border-b border-gray-50">
+                                            {mainLink}
+                                            {link.hasDropdown && link.dropdownItems && (
+                                                <div className="flex flex-col pl-14 pb-4 gap-3">
+                                                    {link.dropdownItems.map(item => (
+                                                        item.isRouter ? (
+                                                            <Link key={item.label} to={item.path} onClick={() => setMobileOpen(false)} className="text-[15px] font-medium text-slate-600 hover:text-blue-600">
+                                                                {item.label}
+                                                            </Link>
+                                                        ) : (
+                                                            <a key={item.label} href={item.path} onClick={() => setMobileOpen(false)} className="text-[15px] font-medium text-slate-600 hover:text-blue-600">
+                                                                {item.label}
+                                                            </a>
+                                                        )
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
                                     );
                                 })}
                             </div>

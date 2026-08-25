@@ -29,9 +29,9 @@ const navColumns = [
     links: [
       { label: 'Home', path: '/', isRouter: true },
       { label: 'Solution', path: '/#solution', isRouter: false },
-      { label: 'How it Works', path: '#', isRouter: false },
-      { label: 'Demand Forecasting', path: '#', isRouter: false },
-      { label: 'ERP Integration', path: '#', isRouter: false },
+      { label: 'How it Works', path: '/solution/how-it-works', isRouter: true },
+      { label: 'Demand Forecasting', path: '/solution/demand-forecasting', isRouter: true },
+      { label: 'ERP Integration', path: '/solution/erp-integration', isRouter: true },
       { label: 'Pricing', path: '#', isRouter: false },
     ],
   },
