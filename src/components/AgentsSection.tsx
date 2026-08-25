@@ -1,67 +1,66 @@
 import { useRef, useState } from 'react';
 import { motion, useInView, useMotionTemplate, useMotionValue, AnimatePresence } from 'framer-motion';
 import { 
-    LineChart, CloudRain, PackageSearch, 
-    Tags, ShoppingCart, Map, 
-    ShieldAlert, PieChart, Layers,
-    ArrowRight, Play, X
+    ArrowRight, Play, X,
+    TrendingUp, AlertTriangle, Radio, Eye, DollarSign,
+    Megaphone, GitBranch, BarChart3, Cpu
 } from 'lucide-react';
 import aiAgentVideo from '../assets/ai-agent.mp4';
 
 const agents = [
   {
     name: 'Forecast Agent',
-    role: 'Baseline Demand Predictor',
-    desc: "Looks at past sales and trends to predict what you'll sell next — for every single product.",
-    icon: LineChart,
+    role: 'Predictive Modeler',
+    desc: "Generates rolling demand forecasts with confidence intervals using time-series ML and seasonality analysis.",
+    icon: TrendingUp,
   },
   {
-    name: 'Demand Sensing Agent',
-    role: 'Real-Time Market Monitor',
-    desc: 'Watches things like weather, events, and social media to catch sudden changes in demand early.',
-    icon: CloudRain,
+    name: 'Deviation Agent',
+    role: 'Real-time Alerts',
+    desc: 'Monitors actuals vs. forecast 24/7, firing alerts the moment demand deviates to trace the root cause.',
+    icon: AlertTriangle,
   },
   {
-    name: 'Inventory Agent',
-    role: 'Stock Health Manager',
-    desc: 'Keeps just the right amount of stock — not too much, not too little.',
-    icon: PackageSearch,
+    name: 'Market Signal Agent',
+    role: 'External Data Synthesizer',
+    desc: 'Ingests macro-economic indicators, social trends, and news sentiment to surface early demand signals.',
+    icon: Radio,
   },
   {
-    name: 'Pricing & Promotion Agent',
-    role: 'Revenue Maximizer',
-    desc: "Suggests the best price and the right time to run a promotion, based on what's happening in the market.",
-    icon: Tags,
+    name: 'Competitor Agent',
+    role: 'Competitive Intel',
+    desc: "Tracks competitor pricing, stock availability, and promotional activity across channels in real-time.",
+    icon: Eye,
   },
   {
-    name: 'Replenishment Agent',
-    role: 'Automated Ordering Engine',
-    desc: 'Automatically places orders when stock runs low — no manual work needed.',
-    icon: ShoppingCart,
+    name: 'Pricing Agent',
+    role: 'Dynamic Pricing',
+    desc: 'Recommends optimal price points balancing elasticity, margins, and competitive positioning.',
+    icon: DollarSign,
   },
   {
-    name: 'Logistics Agent',
-    role: 'Network Flow Optimizer',
-    desc: "Finds the fastest, cheapest shipping route — and reroutes automatically if there's a delay.",
-    icon: Map,
+    name: 'Promotion Agent',
+    role: 'ROI Tracking',
+    desc: "Simulates promotional uplift, cannibalization, and ROI before launch — and tracks actuals live.",
+    icon: Megaphone,
   },
   {
-    name: 'Supplier Risk Agent',
-    role: 'Upstream Sentinel',
-    desc: "Keeps an eye on your suppliers, warning you early if there's a risk to your supply.",
-    icon: ShieldAlert,
+    name: 'Scenario Agent',
+    role: 'What-if Modeling',
+    desc: "Build unlimited what-if scenarios — like supply disruptions or price changes — and compare outcomes instantly.",
+    icon: GitBranch,
   },
   {
-    name: 'Allocation Agent',
-    role: 'Scarcity Manager',
-    desc: 'When stock is limited, decides the smartest way to share it across stores or regions.',
-    icon: PieChart,
+    name: 'Executive Insight Agent',
+    role: 'C-Suite Dashboard',
+    desc: 'Synthesises data from all agents into executive briefings and KPI dashboards for top leadership.',
+    icon: BarChart3,
   },
   {
-    name: 'Scenario Planning Agent',
-    role: 'Strategic Simulator',
-    desc: 'Lets you test "what if" situations before making a big decision — so you know the outcome in advance.',
-    icon: Layers,
+    name: 'ERP Action Agent',
+    role: 'Auto-Execution',
+    desc: 'Converts AI recommendations directly into ERP transactions like purchase orders and stock transfers.',
+    icon: Cpu,
   }
 ];
 

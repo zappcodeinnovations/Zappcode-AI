@@ -168,6 +168,10 @@ import ContactUsPage from './pages/ContactUsPage';
 import AgentsPage from './pages/AgentsPage';
 import BookDemoPage from './pages/BookDemoPage';
 
+import SolutionHowItWorksPage from './pages/SolutionHowItWorksPage';
+import SolutionDemandForecastingPage from './pages/SolutionDemandForecastingPage';
+import SolutionErpIntegrationPage from './pages/SolutionErpIntegrationPage';
+
 function HomePage() {
     return (
         <main>
@@ -203,6 +207,10 @@ function App() {
                 <Route path="/contact" element={<ContactUsPage />} />
                 <Route path="/agents"  element={<AgentsPage />} />
                 <Route path="/book-demo" element={<BookDemoPage />} />
+                
+                <Route path="/solution/how-it-works" element={<SolutionHowItWorksPage />} />
+                <Route path="/solution/demand-forecasting" element={<SolutionDemandForecastingPage />} />
+                <Route path="/solution/erp-integration" element={<SolutionErpIntegrationPage />} />
             </Routes>
         </>
     );
