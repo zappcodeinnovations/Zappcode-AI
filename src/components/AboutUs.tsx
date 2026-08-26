@@ -366,7 +366,7 @@ export default function AboutUs() {
                       <Crown className="w-4 h-4 text-blue-600" strokeWidth={2.5} />
                     </div>
 
-                    <img src={founderImg} alt="Sanjog Meshram" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                    <img src={founderImg} alt="Sanjog Meshram" loading="lazy" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
 
                     {/* Fade to white gradient at the bottom of the image */}
                     <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white to-transparent" />
@@ -415,7 +415,7 @@ export default function AboutUs() {
                       <Code className="w-4 h-4 text-[#ff6b00]" strokeWidth={2.5} />
                     </div>
 
-                    <img src={enggTeamImg} alt="Engineering Team" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+                    <img src={enggTeamImg} alt="Engineering Team" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
 
                     {/* Fade to white gradient at the bottom of the image */}
                     <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white to-transparent" />
@@ -463,7 +463,7 @@ export default function AboutUs() {
                       <PenTool className="w-4 h-4 text-[#00a8b5]" strokeWidth={2.5} />
                     </div>
 
-                    <img src={productTeamImg} alt="Product Team" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+                    <img src={productTeamImg} alt="Product Team" loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
 
                     {/* Fade to white gradient at the bottom of the image */}
                     <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white to-transparent" />

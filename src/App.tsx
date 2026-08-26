@@ -1,4 +1,5 @@
-import { useEffect, useState, useRef } from 'react';
+import React, { Suspense, useEffect, useState, useRef } from 'react';
+import LeadCaptureModal from './components/LeadCaptureModal';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Hero from './components/Hero';
 import ProblemStatement from './components/ProblemStatement';
@@ -163,14 +164,16 @@ export function CTADivider({ headline, sub, btnText, btnHref, icon: Icon, varian
     );
 }
 
-import AboutUsPage from './pages/AboutUsPage';
-import ContactUsPage from './pages/ContactUsPage';
-import AgentsPage from './pages/AgentsPage';
-import BookDemoPage from './pages/BookDemoPage';
+const AboutUsPage = React.lazy(() => import('./pages/AboutUsPage'));
+const PrivacyPolicyPage = React.lazy(() => import('./pages/PrivacyPolicyPage'));
+const TermsAndConditionsPage = React.lazy(() => import('./pages/TermsAndConditionsPage'));
+const ContactUsPage = React.lazy(() => import('./pages/ContactUsPage'));
+const AgentsPage = React.lazy(() => import('./pages/AgentsPage'));
+const BookDemoPage = React.lazy(() => import('./pages/BookDemoPage'));
 
-import SolutionHowItWorksPage from './pages/SolutionHowItWorksPage';
-import SolutionDemandForecastingPage from './pages/SolutionDemandForecastingPage';
-import SolutionErpIntegrationPage from './pages/SolutionErpIntegrationPage';
+const SolutionHowItWorksPage = React.lazy(() => import('./pages/SolutionHowItWorksPage'));
+const SolutionDemandForecastingPage = React.lazy(() => import('./pages/SolutionDemandForecastingPage'));
+const SolutionErpIntegrationPage = React.lazy(() => import('./pages/SolutionErpIntegrationPage'));
 
 function HomePage() {
     return (
@@ -199,19 +202,23 @@ function App() {
     return (
         <>
             <ScrollProgress />
-
             <ScrollToTop />
-            <Routes>
-                <Route path="/"        element={<HomePage />} />
-                <Route path="/about"   element={<AboutUsPage />} />
-                <Route path="/contact" element={<ContactUsPage />} />
-                <Route path="/agents"  element={<AgentsPage />} />
-                <Route path="/book-demo" element={<BookDemoPage />} />
-                
-                <Route path="/solution/how-it-works" element={<SolutionHowItWorksPage />} />
-                <Route path="/solution/demand-forecasting" element={<SolutionDemandForecastingPage />} />
-                <Route path="/solution/erp-integration" element={<SolutionErpIntegrationPage />} />
-            </Routes>
+            <LeadCaptureModal />
+            <Suspense fallback={<div className="h-[100svh] w-full bg-[#0D1B2A] flex items-center justify-center"><div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div></div>}>
+                <Routes>
+                    <Route path="/"        element={<HomePage />} />
+                    <Route path="/about"   element={<AboutUsPage />} />
+                    <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+                    <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
+                    <Route path="/contact" element={<ContactUsPage />} />
+                    <Route path="/agents"  element={<AgentsPage />} />
+                    <Route path="/book-demo" element={<BookDemoPage />} />
+                    
+                    <Route path="/solution/how-it-works" element={<SolutionHowItWorksPage />} />
+                    <Route path="/solution/demand-forecasting" element={<SolutionDemandForecastingPage />} />
+                    <Route path="/solution/erp-integration" element={<SolutionErpIntegrationPage />} />
+                </Routes>
+            </Suspense>
         </>
     );
 }

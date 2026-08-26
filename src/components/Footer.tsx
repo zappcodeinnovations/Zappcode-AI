@@ -8,16 +8,12 @@ const socialIcons = [
     d: 'M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z M4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z',
   },
   {
-    label: 'X',
-    d: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L2.25 2.25h6.194l4.265 5.638L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z',
+    label: 'Instagram',
+    d: 'M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.555.556.9 1.11 1.152 1.772.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.152 1.772c-.556.555-1.11.9-1.772 1.152-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.152 4.884 4.884 0 0 1-1.153-1.772c-.246-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 1 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z',
   },
   {
-    label: 'YouTube',
-    d: 'M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.376.55 9.376.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z',
-  },
-  {
-    label: 'GitHub',
-    d: 'M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22',
+    label: 'Facebook',
+    d: 'M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z',
   },
 ];
 
@@ -32,7 +28,7 @@ const navColumns = [
       { label: 'How it Works', path: '/solution/how-it-works', isRouter: true },
       { label: 'Demand Forecasting', path: '/solution/demand-forecasting', isRouter: true },
       { label: 'ERP Integration', path: '/solution/erp-integration', isRouter: true },
-      { label: 'Pricing', path: '#', isRouter: false },
+      // { label: 'Pricing', path: '#', isRouter: false },
     ],
   },
   {
@@ -44,8 +40,8 @@ const navColumns = [
       { label: 'Contact', path: '/contact', isRouter: true },
       { label: 'Blog', path: '#', isRouter: false },
       { label: 'Careers', path: '#', isRouter: false },
-      { label: 'Privacy Policy', path: '#', isRouter: false },
-      { label: 'Terms of Service', path: '#', isRouter: false },
+      { label: 'Privacy Policy', path: '/privacy-policy', isRouter: true },
+      { label: 'Terms of Service', path: '/terms-and-conditions', isRouter: true },
     ],
   },
   {
@@ -55,10 +51,10 @@ const navColumns = [
     links: [
       { label: 'Agents', path: '/agents', isRouter: true },
       { label: 'Industries', path: '/#use-cases', isRouter: false },
-      { label: 'Case Studies', path: '#', isRouter: false },
-      { label: 'Documentation', path: '#', isRouter: false },
-      { label: 'Webinars', path: '#', isRouter: false },
-      { label: 'Help Center', path: '#', isRouter: false },
+      // { label: 'Case Studies', path: '#', isRouter: false },
+      // { label: 'Documentation', path: '#', isRouter: false },
+      // { label: 'Webinars', path: '#', isRouter: false },
+      // { label: 'Help Center', path: '#', isRouter: false },
     ],
   },
 ];
@@ -73,9 +69,9 @@ export default function Footer() {
           {/* Brand Section (Left) */}
           <div className="flex flex-col pr-4">
             <div className="flex items-center mb-6 md:mb-8">
-              <img 
-                src={footerLogo} 
-                alt="Zappcode AI" 
+              <img
+                src={footerLogo}
+                alt="Zappcode AI"
                 className="h-20 md:h-28 w-auto object-contain"
                 style={{ transform: 'scale(1.4)', transformOrigin: 'left center' }}
               />
@@ -176,13 +172,15 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-10 flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex flex-col md:flex-row items-center gap-4 text-[13px] font-medium text-slate-500">
-            <p>© 2026 Zappcode Technologies Pvt. Ltd. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Zappcode Technologies Pvt. Ltd. All rights reserved.</p>
             <div className="hidden md:block w-px h-4 bg-gray-300" />
+            {/*
             <div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-800 transition-colors bg-gray-50 px-3 py-1.5 rounded-full border border-gray-100">
               <Globe className="w-4 h-4" />
               <span>English (India)</span>
               <ChevronRight className="w-3 h-3 rotate-90" />
             </div>
+            */}
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-10">
