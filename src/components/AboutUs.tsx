@@ -1,6 +1,11 @@
 import React, { useRef } from 'react';
 import { motion, useInView, useSpring, useTransform, useScroll, useMotionValueEvent, MotionValue } from 'framer-motion';
 import { Target, Zap, ShieldCheck, Crown, Code, PenTool, Star, Users, Lightbulb } from 'lucide-react';
+import founderImg from '../assets/founder.png';
+import enggTeamImg from '../assets/engg-team.png';
+import productTeamImg from '../assets/product-team.png';
+import aboutBannerImg from '../assets/about-banner.png';
+import aboutResponsiveImg from '../assets/about-responsive.png';
 
 const StatCounter = ({ endValue, suffix = "", isFloat = false }: { endValue: number, suffix?: string, isFloat?: boolean }) => {
   const ref = useRef<HTMLSpanElement>(null);
@@ -116,7 +121,7 @@ export default function AboutUs() {
         <div
           className="hidden lg:block absolute inset-0 z-0 pointer-events-none bg-no-repeat bg-right bg-contain"
           style={{
-            backgroundImage: "url('/src/assets/about-banner.png')",
+            backgroundImage: `url(${aboutBannerImg})`,
           }}
         />
 
@@ -124,7 +129,7 @@ export default function AboutUs() {
         <div
           className="block lg:hidden absolute inset-0 z-0 pointer-events-none bg-no-repeat bg-bottom bg-cover"
           style={{
-            backgroundImage: "url('/src/assets/about-responsive.png')",
+            backgroundImage: `url(${aboutResponsiveImg})`,
           }}
         />
 
@@ -361,7 +366,7 @@ export default function AboutUs() {
                       <Crown className="w-4 h-4 text-blue-600" strokeWidth={2.5} />
                     </div>
 
-                    <img src="/src/assets/founder.png" alt="Sanjog Meshram" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                    <img src={founderImg} alt="Sanjog Meshram" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
 
                     {/* Fade to white gradient at the bottom of the image */}
                     <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white to-transparent" />
@@ -410,7 +415,7 @@ export default function AboutUs() {
                       <Code className="w-4 h-4 text-[#ff6b00]" strokeWidth={2.5} />
                     </div>
 
-                    <img src="/src/assets/engg-team.png" alt="Engineering Team" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+                    <img src={enggTeamImg} alt="Engineering Team" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
 
                     {/* Fade to white gradient at the bottom of the image */}
                     <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white to-transparent" />
@@ -458,7 +463,7 @@ export default function AboutUs() {
                       <PenTool className="w-4 h-4 text-[#00a8b5]" strokeWidth={2.5} />
                     </div>
 
-                    <img src="/src/assets/product-team.png" alt="Product Team" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+                    <img src={productTeamImg} alt="Product Team" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
 
                     {/* Fade to white gradient at the bottom of the image */}
                     <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white to-transparent" />
