@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect, useState, useRef } from 'react';
-import LeadCaptureModal from './components/LeadCaptureModal';
+// import LeadCaptureModal from './components/LeadCaptureModal';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Hero from './components/Hero';
 import ProblemStatement from './components/ProblemStatement';
@@ -203,7 +203,7 @@ function App() {
         <>
             <ScrollProgress />
             <ScrollToTop />
-            <LeadCaptureModal />
+            {/* <LeadCaptureModal /> */}
             <Suspense fallback={<div className="h-[100svh] w-full bg-[#0D1B2A] flex items-center justify-center"><div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div></div>}>
                 <Routes>
                     <Route path="/"        element={<HomePage />} />

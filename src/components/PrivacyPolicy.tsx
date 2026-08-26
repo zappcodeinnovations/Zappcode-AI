@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShieldCheck, ChevronDown, CheckCircle2, Mail } from 'lucide-react';
 
@@ -55,7 +55,7 @@ export default function PrivacyPolicy() {
 
   const getSectionColor = (id: string) => SECTIONS.find(s => s.id === id)?.color || '#2563EB';
 
-  const fadeInUp = {
+  const fadeInUp: any = {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }
   };
@@ -171,7 +171,7 @@ export default function PrivacyPolicy() {
             {/* SECTION 1 */}
             <motion.section
               id="info-we-collect"
-              ref={(el) => sectionRefs.current[0] = el}
+              ref={(el) => { sectionRefs.current[0] = el; }}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
@@ -198,7 +198,7 @@ export default function PrivacyPolicy() {
             {/* SECTION 2 */}
             <motion.section
               id="how-we-use"
-              ref={(el) => sectionRefs.current[1] = el}
+              ref={(el) => { sectionRefs.current[1] = el; }}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
@@ -234,7 +234,7 @@ export default function PrivacyPolicy() {
             {/* SECTION 3 */}
             <motion.section
               id="info-sharing"
-              ref={(el) => sectionRefs.current[2] = el}
+              ref={(el) => { sectionRefs.current[2] = el; }}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
@@ -258,7 +258,7 @@ export default function PrivacyPolicy() {
             {/* SECTION 4 */}
             <motion.section
               id="data-security"
-              ref={(el) => sectionRefs.current[3] = el}
+              ref={(el) => { sectionRefs.current[3] = el; }}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
@@ -282,7 +282,7 @@ export default function PrivacyPolicy() {
             {/* SECTION 5 */}
             <motion.section
               id="your-choices"
-              ref={(el) => sectionRefs.current[4] = el}
+              ref={(el) => { sectionRefs.current[4] = el; }}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
@@ -306,7 +306,7 @@ export default function PrivacyPolicy() {
             {/* SECTION 6 */}
             <motion.section
               id="contact-us"
-              ref={(el) => sectionRefs.current[5] = el}
+              ref={(el) => { sectionRefs.current[5] = el; }}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
@@ -340,7 +340,7 @@ export default function PrivacyPolicy() {
             {/* SECTION 7 */}
             <motion.section
               id="changes"
-              ref={(el) => sectionRefs.current[6] = el}
+              ref={(el) => { sectionRefs.current[6] = el; }}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
