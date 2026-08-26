@@ -423,6 +423,7 @@ export default function UseCases() {
                                             <AnimatePresence>
                                                 {isActive && (
                                                     <motion.span
+                                                        key="active-badge"
                                                         initial={{ opacity: 0, y: -4 }}
                                                         animate={{ opacity: 1, y: 0 }}
                                                         exit={{ opacity: 0, y: -4 }}
@@ -434,6 +435,7 @@ export default function UseCases() {
                                                 )}
                                                 {isActive && !userInteracted && (
                                                     <motion.div
+                                                        key="progress-bar"
                                                         initial={{ width: 0 }}
                                                         animate={{ width: "100%" }}
                                                         transition={{ duration: 6, ease: "linear" }}

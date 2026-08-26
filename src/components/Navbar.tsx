@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Menu, X, ArrowRight, Home, User, LayoutGrid, Bot, ShieldCheck, FileText, ChevronDown } from 'lucide-react';
+import { Menu, X, ArrowRight, Home, User, LayoutGrid, Bot, ShieldCheck, ChevronDown } from 'lucide-react';
 import logo from '../assets/navbar-logo.png';
 
 const navLinks = [
@@ -24,15 +24,17 @@ const navLinks = [
             { label: 'Logistics', path: '#', isRouter: false },
         ]
     },
-    {
-        label: 'Resources', path: '/contact', isRouter: true, icon: FileText, hasDropdown: true,
-        dropdownItems: [
-            { label: 'Case Studies', path: '#', isRouter: false },
-            { label: 'Documentation', path: '#', isRouter: false },
-            { label: 'Webinars', path: '#', isRouter: false },
-        ]
-    },
+
+    // {
+    //     label: 'Resources', path: '/contact', isRouter: true, icon: FileText, hasDropdown: true,
+    //     dropdownItems: [
+    //         { label: 'Case Studies', path: '#', isRouter: false },
+    //         { label: 'Documentation', path: '#', isRouter: false },
+    //         { label: 'Webinars', path: '#', isRouter: false },
+    //     ]
+    // },
 ];
+
 
 export default function Navbar() {
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -111,7 +113,7 @@ export default function Navbar() {
                                     {/* Dropdown Menu */}
                                     <AnimatePresence>
                                         {link.hasDropdown && link.dropdownItems && isDropdownOpen && (
-                                            <motion.div 
+                                            <motion.div
                                                 initial={{ opacity: 0, y: -10 }}
                                                 animate={{ opacity: 1, y: 0 }}
                                                 exit={{ opacity: 0, y: -10 }}
