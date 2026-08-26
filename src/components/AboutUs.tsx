@@ -5,6 +5,7 @@ import founderImg from '../assets/founder.png';
 import enggTeamImg from '../assets/engg-team.png';
 import productTeamImg from '../assets/product-team.png';
 import aboutBannerImg from '../assets/about-banner.png';
+import aboutResponsiveImg from '../assets/about-responsive.png';
 
 const StatCounter = ({ endValue, suffix = "", isFloat = false }: { endValue: number, suffix?: string, isFloat?: boolean }) => {
   const ref = useRef<HTMLSpanElement>(null);
@@ -128,7 +129,7 @@ export default function AboutUs() {
         <div
           className="block lg:hidden absolute inset-0 z-0 pointer-events-none bg-no-repeat bg-bottom bg-cover"
           style={{
-            backgroundImage: "url('/src/assets/about-responsive.png')",
+            backgroundImage: `url(${aboutResponsiveImg})`,
           }}
         />
 
