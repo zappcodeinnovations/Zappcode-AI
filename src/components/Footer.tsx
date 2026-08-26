@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { LayoutGrid, Building2, BookOpen, Send, ShieldCheck, Lock, Euro, Globe, ChevronRight } from 'lucide-react';
+import { LayoutGrid, Building2, BookOpen, Send, ShieldCheck, Lock, Euro, ChevronRight } from 'lucide-react';
 import footerLogo from '../assets/footer-logo.png';
 
 const socialIcons = [

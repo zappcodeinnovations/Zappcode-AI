@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Scale, ChevronDown, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -57,7 +57,7 @@ export default function TermsAndConditions() {
 
   const getSectionColor = (id: string) => SECTIONS.find(s => s.id === id)?.color || '#2563EB';
 
-  const fadeInUp = {
+  const fadeInUp: any = {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }
   };
@@ -175,7 +175,7 @@ export default function TermsAndConditions() {
             {/* SECTION 1 */}
             <motion.section
               id="intro"
-              ref={(el) => sectionRefs.current[0] = el}
+              ref={(el) => { sectionRefs.current[0] = el; }}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
@@ -199,7 +199,7 @@ export default function TermsAndConditions() {
             {/* SECTION 2 */}
             <motion.section
               id="website-use"
-              ref={(el) => sectionRefs.current[1] = el}
+              ref={(el) => { sectionRefs.current[1] = el; }}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
@@ -223,7 +223,7 @@ export default function TermsAndConditions() {
             {/* SECTION 3 */}
             <motion.section
               id="ip-rights"
-              ref={(el) => sectionRefs.current[2] = el}
+              ref={(el) => { sectionRefs.current[2] = el; }}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
@@ -247,7 +247,7 @@ export default function TermsAndConditions() {
             {/* SECTION 4 */}
             <motion.section
               id="liability"
-              ref={(el) => sectionRefs.current[3] = el}
+              ref={(el) => { sectionRefs.current[3] = el; }}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
@@ -271,7 +271,7 @@ export default function TermsAndConditions() {
             {/* SECTION 5 */}
             <motion.section
               id="external-links"
-              ref={(el) => sectionRefs.current[4] = el}
+              ref={(el) => { sectionRefs.current[4] = el; }}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
@@ -295,7 +295,7 @@ export default function TermsAndConditions() {
             {/* SECTION 6 */}
             <motion.section
               id="privacy-policy"
-              ref={(el) => sectionRefs.current[5] = el}
+              ref={(el) => { sectionRefs.current[5] = el; }}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
@@ -326,7 +326,7 @@ export default function TermsAndConditions() {
             {/* SECTION 7 */}
             <motion.section
               id="contact-us"
-              ref={(el) => sectionRefs.current[6] = el}
+              ref={(el) => { sectionRefs.current[6] = el; }}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
@@ -360,7 +360,7 @@ export default function TermsAndConditions() {
             {/* SECTION 8 */}
             <motion.section
               id="changes"
-              ref={(el) => sectionRefs.current[7] = el}
+              ref={(el) => { sectionRefs.current[7] = el; }}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
