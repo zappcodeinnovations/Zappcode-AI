@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useRef, Suspense } from 'react';
+import React, { Suspense, useEffect, useState, useRef } from 'react';
+import LeadCaptureModal from './components/LeadCaptureModal';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Hero from './components/Hero';
 import ProblemStatement from './components/ProblemStatement';
@@ -164,6 +165,8 @@ export function CTADivider({ headline, sub, btnText, btnHref, icon: Icon, varian
 }
 
 const AboutUsPage = React.lazy(() => import('./pages/AboutUsPage'));
+const PrivacyPolicyPage = React.lazy(() => import('./pages/PrivacyPolicyPage'));
+const TermsAndConditionsPage = React.lazy(() => import('./pages/TermsAndConditionsPage'));
 const ContactUsPage = React.lazy(() => import('./pages/ContactUsPage'));
 const AgentsPage = React.lazy(() => import('./pages/AgentsPage'));
 const BookDemoPage = React.lazy(() => import('./pages/BookDemoPage'));
@@ -199,12 +202,14 @@ function App() {
     return (
         <>
             <ScrollProgress />
-
             <ScrollToTop />
+            <LeadCaptureModal />
             <Suspense fallback={<div className="h-[100svh] w-full bg-[#0D1B2A] flex items-center justify-center"><div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div></div>}>
                 <Routes>
                     <Route path="/"        element={<HomePage />} />
                     <Route path="/about"   element={<AboutUsPage />} />
+                    <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+                    <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
                     <Route path="/contact" element={<ContactUsPage />} />
                     <Route path="/agents"  element={<AgentsPage />} />
                     <Route path="/book-demo" element={<BookDemoPage />} />
