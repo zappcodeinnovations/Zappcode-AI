@@ -173,7 +173,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-10 flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex flex-col md:flex-row items-center gap-4 text-[13px] font-medium text-slate-500">
-            <p>© {new Date().getFullYear()} Zappcode Technologies Pvt. Ltd. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Zappcode Innovations Pvt. Ltd. All rights reserved.</p>
             <div className="hidden md:block w-px h-4 bg-gray-300" />
             {/*
             <div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-800 transition-colors bg-gray-50 px-3 py-1.5 rounded-full border border-gray-100">

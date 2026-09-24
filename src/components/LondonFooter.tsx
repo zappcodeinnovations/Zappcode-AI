@@ -172,7 +172,7 @@ export default function LondonFooter() {
         {/* Bottom Bar */}
         <div className="pt-10 flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex flex-col md:flex-row items-center gap-4 text-[13px] font-medium text-slate-500">
-            <p>© {new Date().getFullYear()} Zappcode Technologies Pvt. Ltd. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Zappcode Innovations Pvt. Ltd. All rights reserved.</p>
             <div className="hidden md:block w-px h-4 bg-white/10" />
           </div>
 
